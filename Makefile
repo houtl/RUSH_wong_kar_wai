@@ -6,7 +6,7 @@
 #    By: thou <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/07 16:17:53 by thou              #+#    #+#              #
-#    Updated: 2017/03/17 16:26:50 by thou             ###   ########.fr        #
+#    Updated: 2017/03/17 16:59:29 by thou             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,6 @@ fclean:
 	@rm -rf $(OBJ_DIR)
 	@echo "$(YELLOW)Clean	./obj$(GREEN)			[ OK ]$(RESET)"
 	@rm -rf $(NAME)
-	@echo "$(YELLOW)Clean	$(NAME)$(GREEN)	[ OK ]$(RESET)"
+	@echo "$(YELLOW)Clean	$(NAME)$(GREEN)		[ OK ]$(RESET)"
 
 re: fclean all
