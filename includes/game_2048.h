@@ -6,7 +6,7 @@
 /*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 15:39:49 by thou              #+#    #+#             */
-/*   Updated: 2017/03/17 15:40:49 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/17 17:46:16 by thou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 # define GAME_2048_H
 
 # include "libft.h"
+# include <stdlib.h>
+# include <time.h>
+# include <signal.h>
 
 #endif
