@@ -6,7 +6,7 @@
 /*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 15:39:49 by thou              #+#    #+#             */
-/*   Updated: 2017/03/17 17:46:16 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/17 17:54:17 by thou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include <stdlib.h>
 # include <time.h>
 # include <signal.h>
+# include <curses.h>
 
 #endif
