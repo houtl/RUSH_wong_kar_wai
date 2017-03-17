@@ -6,7 +6,7 @@
 #    By: thou <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/07 16:17:53 by thou              #+#    #+#              #
-#    Updated: 2017/03/17 16:18:10 by thou             ###   ########.fr        #
+#    Updated: 2017/03/17 16:26:50 by thou             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,13 +47,13 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 
 clean:
 	@make clean -C $(LIB)
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@echo "$(YELLOW)Clean	./obj$(GREEN)			[ OK ]$(RESET)"
 
 
 fclean:
 	@make fclean -C $(LIB)
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@echo "$(YELLOW)Clean	./obj$(GREEN)			[ OK ]$(RESET)"
 	@rm -rf $(NAME)
 	@echo "$(YELLOW)Clean	$(NAME)$(GREEN)	[ OK ]$(RESET)"
