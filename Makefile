@@ -6,7 +6,7 @@
 #    By: thou <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/07 16:17:53 by thou              #+#    #+#              #
-#    Updated: 2017/03/17 15:35:55 by thou             ###   ########.fr        #
+#    Updated: 2017/03/17 16:18:10 by thou             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET					=	\033[0m
 CLEAR					=	\033[H\e[J
 
 NAME	=	game_2048
-FLAG	=	-c -Wall -Wextra -Werror
+FLAG	=	-Wall -Wextra -Werror
 INC		=	-Iincludes -Ilibft/includes
 SRC_DIR	=	src/
 SRC_BASE=	game_2048.c
@@ -35,27 +35,27 @@ LFT		=	./libft/libft.a
 all: $(LFT) $(NAME)
 
 $(LFT):
-	make -C $(LIB)
+	@make -C $(LIB)
 
 $(NAME): $(OBJ)
-	gcc $(FLAG) $(NAME) $(OBJ) $(INCLUDES)
+	@gcc $(FLAG) -o $(NAME) $(OBJ) $(INC) -L$(LIB) -lft
 	@echo "\033[48;5;15;38;5;25;1mMAKE $(NAME) DONE$(RESET)"
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	@gcc $(FLAG) -o $@ -c $< $(INCLUDES)
+	@gcc $(FLAG) $(INC) -o $@ -c $< 
 
 clean:
-	make clean -C $(LIB)
-	rm -rf $(OBJ)
+	@make clean -C $(LIB)
+	@rm -rf $(OBJ)
 	@echo "$(YELLOW)Clean	./obj$(GREEN)			[ OK ]$(RESET)"
 
 
 fclean:
-	make fclean -C $(LIB)
-	rm -rf $(OBJ)
+	@make fclean -C $(LIB)
+	@rm -rf $(OBJ)
 	@echo "$(YELLOW)Clean	./obj$(GREEN)			[ OK ]$(RESET)"
-	rm -rf $(NAME)
-	@echo "$(YELLOW)Clean	libftprintf.a$(GREEN)	[ OK ]$(RESET)"
+	@rm -rf $(NAME)
+	@echo "$(YELLOW)Clean	$(NAME)$(GREEN)	[ OK ]$(RESET)"
 
 re: fclean all
