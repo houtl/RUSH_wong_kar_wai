@@ -6,7 +6,7 @@
 #    By: thou <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/07 16:17:53 by thou              #+#    #+#              #
-#    Updated: 2017/03/17 16:59:29 by thou             ###   ########.fr        #
+#    Updated: 2017/03/19 12:56:37 by nozanne          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ NAME	=	game_2048
 FLAG	=	-Wall -Wextra -Werror
 INC		=	-Iincludes -Ilibft/includes
 SRC_DIR	=	src/
-SRC_BASE=	game_2048.c
+SRC_BASE=	game_2048.c change.c free_tab.c menu.c start.c play.c \
+			print_left.c print_right.c print_up.c print_down.c\
+			free_map.c full_map.c score.c
 SRC		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJ_DIR	=	obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))
@@ -38,7 +40,7 @@ $(LFT):
 	@make -C $(LIB)
 
 $(NAME): $(OBJ)
-	@gcc $(FLAG) -o $(NAME) $(OBJ) $(INC) -L$(LIB) -lft
+	@gcc $(FLAG) -o $(NAME) $(OBJ) $(INC) -L$(LIB) -lft -lncurses
 	@echo "\033[48;5;15;38;5;25;1mMAKE $(NAME) DONE$(RESET)"
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c

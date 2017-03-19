@@ -1,0 +1,11 @@
+  THE BEST SCORE OF 4 BLOCK
+ 	RANG			score
+ 	  1		:		0
+	  2		:		0
+	  3		:		0
+
+  THE BEST SCORE OF 5 BLOCK
+    RANG            score
+	  1		:		0
+	  2		:		0
+	  3		:		0
