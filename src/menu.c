@@ -6,7 +6,7 @@
 /*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 14:14:33 by thou              #+#    #+#             */
-/*   Updated: 2017/03/19 08:05:23 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/19 16:19:30 by thou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	**init_tab(void)
 	return (tab);
 }
 
-static void	record()
+static void	record(void)
 {
 	int		i;
 	int		fd;
@@ -65,6 +65,7 @@ static void	record()
 	while ((get_next_line(fd, &line)) > 0)
 	{
 		printw(line);
+		printw("\n");
 		free(line);
 	}
 	while ((getch()) != 27)
@@ -76,7 +77,7 @@ static void	choise(t_para *p, int i)
 	if (i == 0)
 		start(p);
 	else if (i == 1 || i == 2)
-		change(p,i);
+		change(p, i);
 	else if (i == 3)
 		record();
 }
@@ -108,4 +109,4 @@ void		menu(t_para *p)
 		}
 	}
 	free_tab(tab);
-}	
+}

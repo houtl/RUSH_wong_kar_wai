@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   full_map.c                                         :+:      :+:    :+:   */
+/*   random_two.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: nozanne <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/19 11:26:06 by thou              #+#    #+#             */
-/*   Updated: 2017/03/19 12:31:12 by thou             ###   ########.fr       */
+/*   Created: 2017/03/19 18:59:14 by nozanne           #+#    #+#             */
+/*   Updated: 2017/03/19 18:59:18 by nozanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_2048.h"
 
-int		full_map(t_para *p)
+void	random_two(t_para *p)
 {
-	int x;
-	int y;
-
-	y = 0;
-	while (y < p->size)
+	p->x = (int)rand() % p->size;
+	p->y = (int)rand() % p->size;
+	p->z = ((int)rand() % 10) ? 2 : 4;
+	if (p->map[p->x][p->y] == 0)
 	{
-		x = 0;
-		while (x < p->size)
-		{
-			if (p->map[y][x] == 0)
-				return (0);
-			x++;
-		}
-		y++;
+		p->map[p->x][p->y] = p->z;
+		return ;
 	}
-	return (1);
+	else
+		random_two(p);
 }

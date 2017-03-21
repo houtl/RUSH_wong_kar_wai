@@ -6,7 +6,7 @@
 #    By: thou <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/07 16:17:53 by thou              #+#    #+#              #
-#    Updated: 2017/03/19 12:56:37 by nozanne          ###   ########.fr        #
+#    Updated: 2017/03/19 17:58:51 by thou             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,10 @@ NAME	=	game_2048
 FLAG	=	-Wall -Wextra -Werror
 INC		=	-Iincludes -Ilibft/includes
 SRC_DIR	=	src/
-SRC_BASE=	game_2048.c change.c free_tab.c menu.c start.c play.c \
-			print_left.c print_right.c print_up.c print_down.c\
-			free_map.c full_map.c score.c
+SRC_BASE=	game_2048.c change.c free_tab.c menu.c \
+			start.c play.c print_left.c print_right.c \
+			print_up.c print_down.c full_map.c score.c \
+			free_map.c resize.c random_two.c print_map.c
 SRC		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJ_DIR	=	obj/
 OBJ		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))

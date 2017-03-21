@@ -6,13 +6,13 @@
 /*   By: nozanne <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 09:36:02 by nozanne           #+#    #+#             */
-/*   Updated: 2017/03/19 12:41:24 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/19 09:36:05 by nozanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_2048.h"
 
-static int		play_right(int i, t_para *p)
+static void	play_right(int i, t_para *p)
 {
 	while (i < p->size)
 	{
@@ -20,7 +20,7 @@ static int		play_right(int i, t_para *p)
 		p->y = 0;
 		while (p->y < p->size)
 		{
-			while (p->x < p->size -1)
+			while (p->x < p->size - 1)
 			{
 				if (p->map[p->y][p->x] != 0 && p->map[p->y][p->x + 1] == 0)
 				{
@@ -33,27 +33,26 @@ static int		play_right(int i, t_para *p)
 			p->x = 0;
 			p->y++;
 		}
-	play_right(i + 1, p);
+		return (play_right(i + 1, p));
 	}
-	return (p->flag);
 }
 
 static void	add_right(t_para *p)
 {
 	p->x = p->size - 1;
 	p->y = 0;
-
 	while (p->y < p->size)
 	{
 		while (p->map[p->y][p->x - 1])
 		{
 			if (p->map[p->y][p->x] == p->map[p->y][p->x - 1])
 			{
-				p->map[p->y][p->x] = p->map[p->y][p->x] + p->map[p->y][p->x - 1];
+				p->map[p->y][p->x] = p->map[p->y][p->x] +
+				p->map[p->y][p->x - 1];
 				p->map[p->y][p->x - 1] = 0;
 				p->score = p->score + p->map[p->y][p->x];
-				p->x -= 2;
-				printw("%d\n", p->score);
+				p->x -= 1;
+				p->flag = 1;
 			}
 			p->x--;
 		}
@@ -62,15 +61,10 @@ static void	add_right(t_para *p)
 	}
 }
 
-int		print_right(t_para *p)
+int			print_right(t_para *p)
 {
-	int i;
-
-	i = 0;
-	p->flag = 0;
-	play_right(i, p);
+	play_right(0, p);
 	add_right(p);
-	play_right(i, p);
+	play_right(0, p);
 	return (p->flag);
 }
-

@@ -6,13 +6,13 @@
 /*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 15:52:18 by thou              #+#    #+#             */
-/*   Updated: 2017/03/19 08:14:59 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/19 20:03:33 by nozanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_2048.h"
 
-static void change_win(t_para *p)
+static void	change_win(t_para *p)
 {
 	int		win;
 	int		key;
@@ -51,7 +51,7 @@ static void	change_size(t_para *p)
 		key = getch();
 		if (key == 27)
 			break ;
-		else if (key == KEY_UP && size < 20)
+		else if (key == KEY_UP && size < 10)
 			size++;
 		else if (key == KEY_DOWN && size > 2)
 			size--;

@@ -6,7 +6,7 @@
 /*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 09:42:30 by thou              #+#    #+#             */
-/*   Updated: 2017/03/19 12:59:11 by nozanne          ###   ########.fr       */
+/*   Updated: 2017/03/19 17:13:34 by thou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	free_map(t_para *p)
 {
 	int	i;
-	int j;
 	int	**map;
 
 	i = -1;
-	j = -1;
 	map = p->map;
 	while (++i < p->size)
 	{
-		while (++j < p->size)
-			free(map[i]);
+		free(map[i]);
 	}
+	free(map);
 }

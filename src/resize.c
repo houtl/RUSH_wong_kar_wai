@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   full_map.c                                         :+:      :+:    :+:   */
+/*   resize.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/19 11:26:06 by thou              #+#    #+#             */
-/*   Updated: 2017/03/19 12:31:12 by thou             ###   ########.fr       */
+/*   Created: 2017/03/19 17:49:06 by thou              #+#    #+#             */
+/*   Updated: 2017/03/19 17:52:07 by thou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_2048.h"
 
-int		full_map(t_para *p)
+void	resize_board(t_para *p)
 {
-	int x;
-	int y;
-
-	y = 0;
-	while (y < p->size)
-	{
-		x = 0;
-		while (x < p->size)
-		{
-			if (p->map[y][x] == 0)
-				return (0);
-			x++;
-		}
-		y++;
-	}
-	return (1);
+	clear();
+	endwin();
+	refresh();
+	print_map(p);
+	g_signal = 0;
 }

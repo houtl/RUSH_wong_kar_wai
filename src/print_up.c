@@ -6,13 +6,13 @@
 /*   By: nozanne <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 09:36:13 by nozanne           #+#    #+#             */
-/*   Updated: 2017/03/19 12:41:43 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/19 09:36:16 by nozanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_2048.h"
 
-static int		play_up(int i, t_para *p)
+static void	play_up(int i, t_para *p)
 {
 	while (i > 0)
 	{
@@ -33,27 +33,26 @@ static int		play_up(int i, t_para *p)
 			p->y = p->size - 1;
 			p->x++;
 		}
-	play_up(i - 1, p);
+		return (play_up(i - 1, p));
 	}
-	return (p->flag);
 }
 
 static void	add_up(t_para *p)
 {
 	p->x = 0;
 	p->y = 0;
-
 	while (p->x < p->size)
 	{
 		while (p->y + 1 < p->size)
 		{
 			if (p->map[p->y][p->x] == p->map[p->y + 1][p->x])
 			{
-				p->map[p->y][p->x] = p->map[p->y][p->x] + p->map[p->y + 1][p->x];
+				p->map[p->y][p->x] = p->map[p->y][p->x] +
+							p->map[p->y + 1][p->x];
 				p->map[p->y + 1][p->x] = 0;
 				p->score = p->score + p->map[p->y][p->x];
-				p->y += 2;
-				printw("%d\n", p->score);
+				p->y += 1;
+				p->flag = 1;
 			}
 			p->y++;
 		}
@@ -62,11 +61,10 @@ static void	add_up(t_para *p)
 	}
 }
 
-int		print_up(t_para *p)
+int			print_up(t_para *p)
 {
-	int i;
+	int	i;
 
-	p->flag = 0;
 	i = p->size;
 	play_up(i, p);
 	add_up(p);
