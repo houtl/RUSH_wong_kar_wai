@@ -51,6 +51,7 @@ static void	add_right(t_para *p)
 				p->map[p->y][p->x - 1];
 				p->map[p->y][p->x - 1] = 0;
 				p->score = p->score + p->map[p->y][p->x];
+				p->max = (p->map[p->y][p->x] > p->max) ? p->map[p->y][p->x] : p->max;
 				p->x -= 1;
 				p->flag = 1;
 			}

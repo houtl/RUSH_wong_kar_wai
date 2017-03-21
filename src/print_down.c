@@ -51,6 +51,7 @@ static void	add_down(t_para *p)
 								p->map[p->y - 1][p->x];
 				p->map[p->y - 1][p->x] = 0;
 				p->score = p->score + p->map[p->y][p->x];
+				p->max = (p->map[p->y][p->x] > p->max) ? p->map[p->y][p->x] : p->max;
 				p->y -= 1;
 				p->flag = 1;
 			}

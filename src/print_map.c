@@ -66,7 +66,7 @@ void			print_map(t_para *p)
 {
 	printw("\n\n\n  Score = %d | Score to win = %d\n", p->score, p->win);
 	printw(" You may restart anytime by pressing 'R'. \n");
-	if (p->score >= p->win)
+	if (p->max >= p->win)
 	{
 		attron(COLOR_PAIR(5));
 		printw("!!!!! YOU WON !!!!! Do you wish to restart?");

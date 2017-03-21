@@ -38,6 +38,7 @@ typedef struct	s_para
 	int		y;
 	int		z;
 	int		flag;
+	int		max;
 }				t_para;
 
 void			free_tab(char **tab);
