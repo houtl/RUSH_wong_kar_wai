@@ -6,7 +6,7 @@
 /*   By: nozanne <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 08:54:02 by nozanne           #+#    #+#             */
-/*   Updated: 2017/03/19 14:39:06 by nozanne          ###   ########.fr       */
+/*   Updated: 2017/03/19 22:39:06 by nozanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ static void	add_left(t_para *p)
 							+ p->map[p->y][p->x + 1];
 				p->map[p->y][p->x + 1] = 0;
 				p->score = p->score + p->map[p->y][p->x];
-				p->max = (p->map[p->y][p->x] > p->max) ? p->map[p->y][p->x] : p->max;
+				p->max = (p->map[p->y][p->x] > p->max) ?
+					p->map[p->y][p->x] : p->max;
 				p->x += 1;
 				p->flag = 1;
 			}
