@@ -6,7 +6,7 @@
 /*   By: nozanne <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 00:39:04 by nozanne           #+#    #+#             */
-/*   Updated: 2017/03/21 18:07:59 by thou             ###   ########.fr       */
+/*   Updated: 2017/03/19 23:07:59 by thou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void			start(t_para *p)
 	random_two(p);
 	random_two(p);
 	p->score = 0;
+	p->max = 0;
 	print_map(p);
 	while ((i = play(p)) > 0)
 		;
